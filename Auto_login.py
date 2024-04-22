@@ -31,16 +31,16 @@ elem_login_btn = driver.find_element(By.XPATH, "//input[@value='ログイン']")
 elem_login_btn.click()
 
 # ログイン後のページが読み込まれるのを待つ
-wait = WebDriverWait(driver, 10)
-elem_menu = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "img[title=口座管理]")))
+wait = WebDriverWait(driver, 3)
+elem_menu = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "img[title=取引]")))
 
 # 新規注文ページへ遷移
 elem_menu.click()
-link = driver.find_element_by_link_text('口座(円建)')
+link = driver.find_element(By.LINK_TEXT, '国内株式')
 link.click()
 
 # ページが閉じるのを待つために適切な待機時間を設定する
-time.sleep(10)
+time.sleep(3)
 
 # ブラウザを閉じる
 driver.quit()
