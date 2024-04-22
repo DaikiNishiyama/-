@@ -1,15 +1,21 @@
 from selenium import webdriver#←seleniumからwebdriverをインポートします。変更不要です。
 
 #↓IDファイル名や置き場を書き換えて下さい。
-ID = open('C:/Users/user/Desktop/Auto_loginID.txt', 'r', encoding='UTF-8')
+ID = open('C:/Users/user/Desktop/Auto_login/ID.txt', 'r', encoding='UTF-8')
 IDdata = ID.read()
 
 #↓PWファイル名や置き場を書き換えて下さい。
-PW = open('C:/Users/user/Desktop/Auto_loginPW.txt', 'r', encoding='UTF-8')
+PW = open('C:/Users/user/Desktop/Auto_login/PW.txt', 'r', encoding='UTF-8')
 PWdata = PW.read()
 
-#↓chromedriverの置き場を書き換えて下さい。
-driver = webdriver.Chrome("C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\chromedriver.exe")
+# Chrome WebDriverのパスを指定
+driver_path = "C:/Users/user/AppData/Local/Programs/Python/Python312/chromedriver.exe"
+
+# Chrome WebDriverを初期化
+driver_path = "C:/Users/user/AppData/Local/Programs/Python/Python312/chromedriver.exe"
+driver = webdriver.Chrome(driver_path)
+
+# 指定したURLにアクセス
 driver.get("https://www.sbisec.co.jp/ETGate")
 
 #↓ログインIDの自動入力です。変更不要
