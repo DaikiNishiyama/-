@@ -1,11 +1,11 @@
 from selenium import webdriver#←seleniumからwebdriverをインポートします。変更不要です。
 
 #↓IDファイル名や置き場を書き換えて下さい。
-ID = open('C:\Users\user\Desktop\Auto_loginID.txt', 'r', encoding='UTF-8')
+ID = open('C:/Users/user/Desktop/Auto_loginID.txt', 'r', encoding='UTF-8')
 IDdata = ID.read()
 
 #↓PWファイル名や置き場を書き換えて下さい。
-PW = open('C:\Users\user\Desktop\Auto_loginPW.txt', 'r', encoding='UTF-8')
+PW = open('C:/Users/user/Desktop/Auto_loginPW.txt', 'r', encoding='UTF-8')
 PWdata = PW.read()
 
 #↓chromedriverの置き場を書き換えて下さい。
