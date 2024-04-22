@@ -1,31 +1,28 @@
-from selenium import webdriver#←seleniumからwebdriverをインポートします。変更不要です。
+from selenium import webdriver
+from selenium.webdriver.common.by import By
 
-#↓IDファイル名や置き場を書き換えて下さい。
+# IDファイルを読み込む
 ID = open('C:/Users/user/Desktop/Auto_login/ID.txt', 'r', encoding='UTF-8')
 IDdata = ID.read()
 
-#↓PWファイル名や置き場を書き換えて下さい。
+# PWファイルを読み込む
 PW = open('C:/Users/user/Desktop/Auto_login/PW.txt', 'r', encoding='UTF-8')
 PWdata = PW.read()
 
-# Chrome WebDriverのパスを指定
-driver_path = "C:/Users/user/AppData/Local/Programs/Python/Python312/chromedriver.exe"
-
 # Chrome WebDriverを初期化
-driver_path = "C:/Users/user/AppData/Local/Programs/Python/Python312/chromedriver.exe"
-driver = webdriver.Chrome(driver_path)
+driver = webdriver.Chrome()
 
 # 指定したURLにアクセス
 driver.get("https://www.sbisec.co.jp/ETGate")
 
-#↓ログインIDの自動入力です。変更不要
-elem_id_word = driver.find_element_by_name("user_id")#←現在のSBI証券の要素名
+# ログインIDの自動入力
+elem_id_word = driver.find_element(By.NAME, "user_id") # 現在のSBI証券の要素名
 elem_id_word.send_keys(IDdata)
 
-#↓ログインPWの自動入力です。変更不要
-elem_pw_word = driver.find_element_by_name("user_password")#←現在のSBI証券の要素名
+# ログインPWの自動入力
+elem_pw_word = driver.find_element(By.NAME, "user_password") # 現在のSBI証券の要素名
 elem_pw_word.send_keys(PWdata)
 
-#↓ログインボタンの自動入力です。変更不要
-elem_login_btn = driver.find_element_by_xpath("/html/body/table/tbody/tr[1]/td[2]/form/div/div/div/p[2]/a/input")#←現在のSBI証券のログインボタンのxpathです。
+# ログインボタンの自動入力
+elem_login_btn = driver.find_element(By.XPATH, "/html/body/table/tbody/tr[1]/td[2]/form/div/div/div/p[2]/a/input") # 現在のSBI証券のログインボタンのxpath
 elem_login_btn.click()
