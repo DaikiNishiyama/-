@@ -41,6 +41,42 @@ elem_menu.click()
 link = driver.find_element(By.LINK_TEXT, '国内株式')
 link.click()
 
+#　取引方法の選択
+trade_type_dict ={
+    "現物買": "genK",
+    "現物売": "genU",
+    "信用新規買": "shinK",
+    "信用新規売": "shinU"
+}
+
+trade_type = "現物買"
+selected_trade = trade_type_dict.get(trade_type)
+if selected_trade:  # selected_tradeがNoneでない場合にのみ処理を続行します
+    driver.find_element(By.ID, selected_trade).click()
+else:
+    print("指定された取引方法が見つかりませんでした。")
+
+# 証券コードの入力
+driver.find_element(By.NAME, "stock_sec_code").send_keys("4755")
+
+# 株数の入力
+driver.find_element(By.NAME, "input_quantity").send_keys("100")
+
+# 価格の入力
+trade_type_dict ={
+    "指値": 0,
+    "成行": 1,
+    "逆指値": 2,
+}
+
+trade_type = "成行"
+input_quantity = trade_type_dict.get(trade_type)
+if input_quantity:  # input_quantityがNoneでない場合にのみ処理を続行します
+    driver.find_element(By.ID, input_quantity).click()
+else:
+    print("指定された価格情報が見つかりませんでした。")
+
+
 # ページが閉じるのを待つために適切な待機時間を設定する
 time.sleep(3)
 
