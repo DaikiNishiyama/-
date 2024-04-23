@@ -92,15 +92,6 @@ if in_sasinari_kbn == " ":
     driver.find_element(By.CSS_SELECTOR, 'select[name="sasine_condition"] option[value=" "]').click()
     driver.find_element(By.NAME, "input_price").send_keys("100") #価格を入力する項目
 
-period_type_dict = {
-    "当日中": 0,
-    "今週中": 1,
-    "期間指定": 2
-}
-
-period_type = "期間指定"
-driver.find_elements_by_name(name="selected_limit_in")[period_type_dict.get(period_type)].click()
-
 
 # ページが閉じるのを待つために適切な待機時間を設定する
 time.sleep(3)
