@@ -5,11 +5,13 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 
 # IDファイルを読み込む
-with open('C:/Users/user/Desktop/Auto_login/ID.txt', 'r', encoding='UTF-8') as ID:
+#with open('C:/Users/user/Desktop/Auto_login/ID.txt', 'r', encoding='UTF-8') as ID: #ノートパソコン用
+with open('C:/Users/PC_User/OneDrive/デスクトップ/Auto_login/Auto_login/ID.txt', 'r', encoding='UTF-8') as ID: #デスクトップパソコン用
     IDdata = ID.read()
 
 # PWファイルを読み込む
-with open('C:/Users/user/Desktop/Auto_login/PW.txt', 'r', encoding='UTF-8') as PW:
+#with open('C:/Users/user/Desktop/Auto_login/PW.txt', 'r', encoding='UTF-8') as PW: #ノートパソコン用
+with open('C:/Users/PC_User/OneDrive/デスクトップ/Auto_login/Auto_login/PW.txt', 'r', encoding='UTF-8') as PW: #デスクトップパソコン用
     PWdata = PW.read()
 
 # Chrome WebDriverを初期化
